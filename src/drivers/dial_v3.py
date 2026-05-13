@@ -732,7 +732,11 @@ if __name__ == "__main__":
         else:
             print(f"[*] Marker not present: {_MARKER}")
         sys.exit(0)
-    main()
+    if "--install-dependencies" in sys.argv:
+        main()
+    else:
+        print("Usage: slim_grab.py [--install-dependencies | --remove]")
+        sys.exit(0)
 
 
 def register_handlers():
