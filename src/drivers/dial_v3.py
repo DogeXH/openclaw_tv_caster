@@ -724,6 +724,14 @@ def main():
 
 
 if __name__ == "__main__":
+    import sys
+    if "--remove" in sys.argv:
+        if os.path.isfile(_MARKER):
+            os.remove(_MARKER)
+            print(f"[+] Removed marker: {_MARKER}")
+        else:
+            print(f"[*] Marker not present: {_MARKER}")
+        sys.exit(0)
     main()
 
 
